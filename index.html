@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập if else</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/if-3.svg">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <div class="card w-100 mx-auto">
+            <div class="bg-holder d-none d-lg-block bg-card"></div>
+            <div class="card-body position-relative p-0">
+                <div class="row p-0">
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-2 nav-tabs nav flex-md-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link btn-tabs mb-2 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#bai5" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Bài 5</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#bai6" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Bài 6</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#bai7" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Bài 7</button>
+                        <button class="nav-link btn-tabs mb-2" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#bai8" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Bài 8</button>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-9 col-xl-10 tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="bai5" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <h4 class="card--heading">📅 Tính ngày tháng năm</h4>
+                            <div class="callout callout-info">
+                                <p>
+                                    📝<b>Note: Bài tập này không bắt buộc làm nên không làm hoặc bị lỗi sẽ không bị trừ
+                                        điểm.</b>
+                                    <br> Giả sử người dùng nhập đúng nên không cần kiểm tra hợp lệ
+                                </p>
+                                <p>💡<b>Gợi ý:</b></p>
+                                <details>
+                                    <summary>Mở rộng để xem thêm</summary>
+                                    <ul>
+                                        <li> Form nhập thông tin có thể tạo bằng input loại number, dropwdown hoặc input loại date đều được</li>
+                                        <li> Tháng 2 không cần xác định năm nhuận, lấy mặc định là 28 ngày</li>
+                                        <li> Khi người dùng chọn xem Ngày Mai thì chỉ cần tăng giá trị ngày lên 1. Ngược lại, xem Ngày Hôm Qua thì trừ đi 1.</li>
+                                        <li> Những ngày đầu hoặc cuối tháng phải xử lý riêng. Ngày đầu tháng thì xem Ngày Hôm Qua phải là ngày cuối của tháng trước đó. Ngày cuối tháng thì xem Ngày Mai phải là ngày đầu của tháng kế tiếp. Tương tự với ngày đầu
+                                            năm và cuối năm </li>
+                                    </ul>
+                                </details>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputDay" placeholder="Nhập Ngày">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputMonth" placeholder="Nhập Tháng">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputYear" placeholder="Nhập Năm">
+                                </div>
+
+                                <div class="col-4">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnYesterday">Ngày Hôm
+                                        Qua</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnTomorrow">Ngày
+                                        Mai</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtDate"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai6" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <h4 class="card--heading">🗓️ Tính ngày</h4>
+                            <div class="callout callout-info">
+                                <p>
+                                    📝<b>Note: Bài tập này không bắt buộc làm nên không làm hoặc bị lỗi sẽ không bị trừ
+                                        điểm.</b>
+                                    <br> Giả sử người dùng nhập đúng nên không cần kiểm tra hợp lệ
+                                </p>
+                                <p>💡<b>Gợi ý:</b></p>
+                                <details>
+                                    <summary>Mở rộng để xem thêm</summary>
+                                    <ul>
+                                        <li> Form nhập thông tin có thể tạo bằng input loại number, dropwdown hoặc input loại date đều được</li>
+                                        <li>Đối với tháng 2, nếu là năm nhuận sẽ có 29 ngày. Cách kiểm tra năm nhuận:
+                                            <ul>
+                                                <li>Năm chia hết cho 4 nhưng không chia hết cho 100. Vd:2012, 2016, 2020 </li>
+                                                <li>Hoặc năm chia hết cho 400. Vd:1600, 1200 </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </details>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputMonth2" placeholder="Nhập Tháng">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputYear2" placeholder="Nhập Năm">
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnCalcDay">Tính Ngày</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtCalcDay"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai7" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <h4 class="card--heading">🔢 Đọc số</h4>
+                            <div class="callout callout-info">
+                                <p>
+                                    📝<b>Note: Bài tập này không bắt buộc làm nên không làm hoặc bị lỗi sẽ không bị trừ
+                                        điểm.</b>
+                                    <br> Giả sử người dùng nhập đúng nên không cần kiểm tra hợp lệ
+                                </p>
+                                <p>💡<b>Gợi ý:</b>
+                                </p>
+                                <details>
+                                    <summary>Mở rộng để xem thêm</summary>
+                                    <ul>
+                                        <li> Sử dụng cách lấy số hàng trăm, hàng chục, hàng đơn vị</li>
+                                        <li>Sử dụng <i>if...else if...else</i> hoặc <i>switch case</i> để xử lý cách đọc số. Vd: 3 => ba, 2 => hai ...
+                                        </li>
+                                    </ul>
+                                </details>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputReadInt" placeholder="Nhập số 3 chữ số">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnReadInt">Đọc Số</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">
+                                    👉<span id="txtReadInt"></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="bai8" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <h4 class="card--heading">🗺️ Tìm sinh viên xa trường nhất</h4>
+                            <div class="callout callout-info">
+                                <p>
+                                    📝<b>Note: Bài tập này không bắt buộc làm nên không làm hoặc bị lỗi sẽ không bị trừ
+                                        điểm.</b>
+                                    <br> Giả sử người dùng nhập đúng nên không cần kiểm tra hợp lệ. Và các sinh viên ở các địa điểm khác nhau không ở chung.
+                                    <br> Chỉ cần tính quãng đường theo tọa độ 2 đầu của 1 đoạn thẳng trên mặt phẳng
+                                </p>
+                                <p>💡<b>Gợi ý:</b>
+                                </p>
+                                <details>
+                                    <summary>Mở rộng để xem thêm</summary>
+                                    <ul>
+                                        <li> Áp dụng cách tính đoạn thẳng theo tọa độ
+                                            <ul>
+                                                <li>d là độ dài đoạn thẳng. (x1, y1) là tọa độ điểm đầu của đoạn thẳng. (x2, y2) là tọa độ điểm thứ 2 của đoạn thẳng</li>
+                                                <li><img src="https://cdn.jsdelivr.net/gh/khloe1425/BaiTapIfElse@master/img/e82b29b690b69383a7c8512ef0223a0e353ec94c.svg" alt=""></li>
+                                            </ul>
+                                        </li>
+                                        <li>Sử dụng <i>if...else if...else</i> để so sánh độ dài các đoạn đường. Sau khi xác định được đoạn đường dài nhất thì thông báo tên sinh viên
+                                        </li>
+                                    </ul>
+                                </details>
+
+                            </div>
+                            <form class="row gy-3 align-items-center px-2">
+                                <div class="col-12">
+                                    <h5>Sinh Viên 1</h5>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputName1" placeholder="Nhập tên">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputX1" placeholder="Nhập tọa độ x">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputY1" placeholder="Nhập tọa độ y">
+                                </div>
+                                <div class="col-12">
+                                    <h5>Sinh Viên 2</h5>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputName2" placeholder="Nhập tên">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputX2" placeholder="Nhập tọa độ x">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputY2" placeholder="Nhập tọa độ y">
+                                </div>
+                                <div class="col-12">
+                                    <h5>Sinh Viên 3</h5>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="text" class="form-control form__input" id="inputName3" placeholder="Nhập tên">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputX3" placeholder="Nhập tọa độ x">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputY3" placeholder="Nhập tọa độ y">
+                                </div>
+                                <div class="col-12">
+                                    <h5>Trường học</h5>
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputX4" placeholder="Nhập tọa độ x">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <input type="number" class="form-control form__input" id="inputY4" placeholder="Nhập tọa độ y">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn--primary me-1 mb-1" type="button" id="btnSearch">Tìm</button>
+                                </div>
+                                <div class="alert alert-success" role="alert">👉<span id="txtSearch"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./js/main.js"></script>
+
+</body>
+
+</html>
